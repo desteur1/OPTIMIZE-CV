@@ -1,0 +1,17 @@
+/* the ::before is a pseudo classe in css. here we create the overlay with it and content:'', tmake sure the overlay doesn't have no text message. that we then give a bg and opacity to it. */
+
+.container {
+  position: relative;
+}
+
+.home-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.3;
+  /* z-index: 1; */
+}
