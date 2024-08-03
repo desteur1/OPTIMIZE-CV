@@ -1,10 +1,10 @@
 /* the ::before is a pseudo classe in css. here we create the overlay with it and content:'', tmake sure the overlay doesn't have no text message. that we then give a bg and opacity to it. */
 
-.container {
+.hero-bg {
   position: relative;
 }
 
-.home-container::before {
+.home-container::after {
   content: "";
   position: absolute;
   top: 0;
@@ -13,5 +13,57 @@
   height: 100%;
   background-color: black;
   opacity: 0.3;
-  /* z-index: 1; */
+  z-index: 1;
+}
+
+.home-container {
+  position: relative;
+}
+
+.hero-bg {
+  width: 100%;
+  height: auto;
+}
+
+.text-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  padding: 1rem; /* Default padding */
+}
+.text-container h1,
+h2 {
+  color: white !important;
+}
+
+/* Responsive font sizes and padding */
+@media (max-width: 992px) {
+  .text-container {
+    padding: 1.5rem; /* Increased padding for medium screens */
+  }
+
+  .text-container h1 {
+    font-size: 2rem; /* Adjust font size for medium screens */
+  }
+
+  .text-container h2 {
+    font-size: 1.5rem; /* Adjust font size for medium screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .text-container {
+    padding: 1rem; /* Increased padding for small screens */
+  }
+
+  .text-container h1 {
+    font-size: 1.5rem; /* Adjust font size for small screens */
+  }
+
+  .text-container h2 {
+    font-size: 1.2rem; /* Adjust font size for small screens */
+  }
 }
