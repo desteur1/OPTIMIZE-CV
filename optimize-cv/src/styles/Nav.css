@@ -6,3 +6,12 @@
 .navbar-brand {
   text-align: center;
 } */
+.navbar a {
+  color: white !important;
+}
+
+@media (min-width: 800px) and (max-width: 992px) {
+  .navbar-nav {
+    padding-left: 4em;
+  }
+}
