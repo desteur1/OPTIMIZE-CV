@@ -7,15 +7,16 @@ import "../styles/Services.css";
 const Services = () => {
   return (
     <div className="service-container">
-      <img src={Servicebg} alt="service baground" className="img-fluid" />
+      <img src={Servicebg} alt="service background" className="img-fluid" />
       <h1>Mon offres de Services</h1>
       <p className="first-p">
         voici les présentation sur lesquelles je peux intervenir
       </p>
-      <div className="line-2"></div>
-      <div className="card-group">
-        <div className="card border border-3 rounded shadow m-3">
-          <img src={UX} className="card-img-top" alt="..." />
+      <div className="service-container__line2"></div>
+      <div className="card-group service-container__group">
+        {/* first column */}
+        <div className="card  border border-3 rounded shadow m-3 service-container__card">
+          <img src={UX} className="card-img-top img-S" alt="UX Design" />
           <div className="card-body">
             <h5 className="card-title">UX DESIGN</h5>
             <p className="card-text">
@@ -25,8 +26,13 @@ const Services = () => {
             </p>
           </div>
         </div>
-        <div className="card border border-3 rounded shadow m-3">
-          <img src={WebBg} className="card-img-top" alt="..." />
+        {/* second column */}
+        <div className="card  border border-3 rounded shadow m-3 service-container__card">
+          <img
+            src={WebBg}
+            className="card-img-top img-S"
+            alt="Web development"
+          />
           <div className="card-body">
             <h5 className="card-title">DÉVELEPPEMENT WEB</h5>
             <p className="card-text">
@@ -35,8 +41,9 @@ const Services = () => {
             </p>
           </div>
         </div>
-        <div className="card border border-3 rounded shadow m-3">
-          <img src={Seo} className="card-img-top last-child" alt="me" />
+        {/* Third comumn */}
+        <div className="card border border-3 rounded shadow m-3 service-container__card ">
+          <img src={Seo} className="card-img-top last-child img-S" alt="Seo" />
           <div className="card-body">
             <h5 className="card-title">RÉFÉRENCEMENT</h5>
             <p className="card-text">

@@ -1,8 +1,8 @@
 .service-container h1 {
   text-align: center;
 }
-.card-img-top {
-  width: 50px;
+.img-S {
+  width: 50px !important;
   height: auto;
   margin-left: auto;
   margin-right: auto;
@@ -15,18 +15,18 @@
   text-align: center;
   padding: 0 !important;
 }
-.line-2 {
+.service-container__line2 {
   width: 15%;
   margin-left: auto;
   margin-right: auto;
-  height: 2px;
+  height: 4px;
   background: blue;
 }
 
-.card-group {
+.service-container__group {
   margin: 80px 50px;
 }
-.card {
+.service-container__card {
   margin: 20px !important;
   padding: 40px !important;
   text-align: center;
@@ -38,17 +38,17 @@
     overflow-wrap: break-word;
   }
 
-  .card-group {
+  .service-container__group {
     margin: 80px 15px;
   }
 
-  .card {
+  .service-container__card {
     padding: 20px 10px 40px 10px !important;
     margin: 5px !important;
   }
 }
 @media (min-width: 576px) and (max-width: 992px) {
-  .card {
+  .service-container__card {
     padding: 30px 20px 60px 20px !important;
     margin: 5px !important;
   }
@@ -57,7 +57,7 @@
   }
 }
 @media (min-width: 992px) {
-  .card {
+  .service-container__card {
     padding: 40px 20px 60px 20px !important;
     margin: 10px !important;
   }

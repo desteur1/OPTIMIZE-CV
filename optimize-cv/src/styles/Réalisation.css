@@ -1,0 +1,31 @@
+.réalisation-container h1 {
+  text-align: center;
+}
+
+/* .réalisation-container__group {
+  margin: 30px 100px;
+} */
+
+.img-p {
+  width: 100% !important;
+  height: 200px !important;
+  object-fit: cover;
+}
+/* .réalisation-container__card {
+  margin: 20px !important;
+} */
+
+/* .réalisation-body {
+  padding: 0 !important;
+} */
+.réalisation-title {
+  padding-top: 10px;
+  text-align: center;
+}
+.button-container {
+  text-align: center;
+}
+
+.card-footer {
+  text-align: center;
+}

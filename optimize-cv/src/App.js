@@ -5,7 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import "./styles/App.css";
 import Home from "./pages/Home";
 import About from "./pages/AboutMe";
-// import Footer from "./pages/Footer";
+import Réalisation from "./pages/Réalisation";
 import Services from "./pages/Services";
 // Footer import
 import twitter from "./styles/images/twitter-icon-2.png";
@@ -40,7 +40,7 @@ function App() {
               <a className="nav-link" href="/Services">
                 Services
               </a>
-              <a className="nav-link" href="/">
+              <a className="nav-link" href="/Réalisation">
                 Réalisation
               </a>
               <a className="nav-link" href=":">
@@ -60,14 +60,14 @@ function App() {
         <Route path="/" element={<About />}></Route>
       </Routes>
       <Routes>
-        {/* <Route path="/" element={<Footer />}></Route> */}
+        <Route path="/Réalisation" element={<Réalisation />}></Route>
         <Route path="/Services" element={<Services />}></Route>
       </Routes>
 
       {/* footer */}
       <div className="container-fluid mt-5  text-center">
         <div className="row align-items-start pt-5 footer-container">
-          <div className="col-lg-3 col-12 col-md-6 ">
+          <div className="col-lg-3 col-12 col-md-6  mb-md-4">
             <address>
               <p className="my-name">
                 <strong>Desteur Fall</strong>
@@ -120,7 +120,7 @@ function App() {
             </address>
           </div>
           {/* second column */}
-          <div className="col-lg-3 col-12 col-md-6 ">
+          <div className="col-lg-3 col-12 col-md-6 mb-md-4  mb-s-2">
             <p className="my-name link-item">
               <strong>Liens utiles</strong>
             </p>
@@ -143,7 +143,7 @@ function App() {
             </ul>
           </div>
           {/* third column */}
-          <div className="col-lg-3 col-12 col-md-6 ">
+          <div className="col-lg-3 col-12 col-md-6  mb-md-4  mb-s-2">
             <p className="my-name link-item">
               <strong>Mes dernières réalisations</strong>
             </p>
@@ -160,7 +160,7 @@ function App() {
             </ul>
           </div>
           {/* forth column */}
-          <div className="col-lg-3 col-12 col-md-6 ">
+          <div className="col-lg-3 col-12 col-md-6 mb-md-4 mb-s-2">
             <p className="my-name link-item">
               <strong>Mes dernières articles</strong>
             </p>
