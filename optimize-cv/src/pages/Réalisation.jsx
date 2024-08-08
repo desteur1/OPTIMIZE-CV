@@ -66,7 +66,7 @@ const Réalisation = () => {
           </div>
 
           {/* Third Card  */}
-          <div className="col-lg-4 col-md-6 ">
+          <div className="col-lg-4 col-md-6 last-child">
             <div className="card border réalisation-container__card rounded-top">
               <img
                 src={homespace}
