@@ -12,6 +12,7 @@ import twitter from "./styles/images/twitter-icon-2.png";
 import linkedin from "./styles/images/linkedin-logo.png";
 import github from "./styles/images/github-logo.png";
 import "./styles/Footer.css";
+import Blog from "./pages/Blog";
 
 function App() {
   return (
@@ -43,7 +44,7 @@ function App() {
               <a className="nav-link" href="/Réalisation">
                 Réalisation
               </a>
-              <a className="nav-link" href=":">
+              <a className="nav-link" href="/Blog">
                 Blog
               </a>
               <a className="nav-link" href="/">
@@ -62,6 +63,7 @@ function App() {
       <Routes>
         <Route path="/Réalisation" element={<Réalisation />}></Route>
         <Route path="/Services" element={<Services />}></Route>
+        <Route path="/Blog" element={<Blog />}></Route>
       </Routes>
 
       {/* footer */}

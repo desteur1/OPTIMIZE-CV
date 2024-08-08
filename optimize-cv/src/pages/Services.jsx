@@ -43,7 +43,7 @@ const Services = () => {
         </div>
         {/* Third comumn */}
         <div className="card border border-3 rounded shadow m-3 service-container__card ">
-          <img src={Seo} className="card-img-top last-child img-S" alt="Seo" />
+          <img src={Seo} className="card-img-top  img-S" alt="Seo" />
           <div className="card-body">
             <h5 className="card-title">RÉFÉRENCEMENT</h5>
             <p className="card-text">
