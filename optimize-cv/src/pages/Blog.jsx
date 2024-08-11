@@ -9,7 +9,7 @@ import Technos from "../styles/images/technos.png";
 
 const Blog = () => {
   return (
-    <div className="blog-container">
+    <div className="blog-container mb-5">
       <img src={Blogbg} alt="Blog background" className="img-fluid" />
       <h1>Blog</h1>
       <p className="first-p">Voici quelques-unes de mes réalisations.</p>

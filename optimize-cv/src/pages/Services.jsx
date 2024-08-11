@@ -6,7 +6,7 @@ import "../styles/Services.css";
 
 const Services = () => {
   return (
-    <div className="service-container">
+    <div className="service-container mb-5">
       <img src={Servicebg} alt="service background" className="img-fluid" />
       <h1>Mon offres de Services</h1>
       <p className="first-p">

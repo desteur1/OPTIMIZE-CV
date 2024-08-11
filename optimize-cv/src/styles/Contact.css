@@ -1,0 +1,66 @@
+/* .modal-overlay {
+  position: relative;
+}
+.modal-content {
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  top: 7%;
+  left: 10%;
+
+  background: white;
+  margin: 0;
+  box-sizing: border-box;
+} */
+.con-form {
+  display: flex;
+  /* margin: 0 2rem 0 2rem; */
+}
+.contact-content {
+  margin: 2% 10%;
+  background: white;
+  position: relative;
+  z-index: 2;
+  padding: 4rem;
+}
+
+.form-group {
+  width: 50%;
+}
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  outline: 0;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.con-h2 {
+  color: #1e1e1e !important;
+}
+.google-map {
+  width: 50%;
+}
+.modal-background {
+  background-image: url("./images/contact-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 10px 50px 40px 50px;
+  display: flex;
+  position: relative;
+}
+.modal-background::before {
+  content: ""; /* Required for pseudo-elements */
+  position: absolute; /* Position overlay on top of the image */
+  top: 0; /* Stretch overlay from top to bottom */
+  left: 0; /* Stretch overlay from left to right */
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(13, 110, 253, 0.5); /* Semi-transparent color */
+  z-index: 1; /* Ensure the overlay is above the background image */
+}
+.google-map {
+  margin-left: 1rem;
+}
