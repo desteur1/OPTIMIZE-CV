@@ -12,7 +12,7 @@ const Réalisation = () => {
       <h1>Mon Portfolio</h1>
       <p className="first-p">Voici quelques-unes de mes réalisations.</p>
       <div className="service-container__line2"></div>
-      <div className="container my-5">
+      <div className="container my-5 ">
         <div className="row">
           {/* First Card  */}
           <div className="col-lg-4 col-md-6 ">
@@ -20,22 +20,26 @@ const Réalisation = () => {
               <img
                 src={portfolio}
                 className="card-img-top img-fluid rounded-top img-p"
-                alt="..."
+                alt="Mon Porfolio"
               />
               <div className="card-body réalisation-body">
-                <h5 className="card-title réalisation-title">Card title</h5>
+                <h5 className="card-title réalisation-title">Mon Portfolio</h5>
                 <p className="card-text réalisation-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional content.
+                  Réalisation D'un Site Personnel CV Digitaux.
                 </p>
                 <div className="button-container">
-                  <a href="/" className="btn btn-outline-primary btn-sm">
+                  <a
+                    href="https://desteur1.github.io/rethinked-porfolio/#contact"
+                    className="btn btn-outline-primary btn-sm"
+                  >
                     voir
                   </a>
                 </div>
               </div>
               <div className="card-footer">
-                <small className="text-muted">Last updated 3 mins ago</small>
+                <small className="text-muted">
+                  Site réalisé avec HTML/CSS/JAVASCRIPT
+                </small>
               </div>
             </div>
           </div>
@@ -46,21 +50,28 @@ const Réalisation = () => {
               <img
                 src={commentD}
                 className="card-img-top img-fluid rounded-top img-p"
-                alt="..."
+                alt="Commentaire Dynamique"
               />
               <div className="card-body réalisation-body">
-                <h5 className="card-title réalisation-title">Card title</h5>
+                <h5 className="card-title réalisation-title">
+                  Commentaire Dynamique
+                </h5>
                 <p className="card-text réalisation-text">
-                  This card has supporting text below as a natural.
+                  Réalisation D'un Site Static
                 </p>
                 <div className="button-container">
-                  <a href="/" className="btn btn-outline-primary btn-sm">
+                  <a
+                    href="https://desteur1.github.io/commentaire_dynamique/"
+                    className="btn btn-outline-primary btn-sm"
+                  >
                     voir
                   </a>
                 </div>
               </div>
               <div className="card-footer">
-                <small className="text-muted">Last updated 3 mins ago</small>
+                <small className="text-muted">
+                  Site réalisé avec HTML/CSS/JAVASCRIPT
+                </small>
               </div>
             </div>
           </div>
@@ -71,22 +82,27 @@ const Réalisation = () => {
               <img
                 src={homespace}
                 className="card-img-top img-fluid rounded-top img-p"
-                alt="..."
+                alt="HomeSpace"
               />
               <div className="card-body réalisation-body">
-                <h5 className="card-title réalisation-title">Card title</h5>
+                <h5 className="card-title réalisation-title">My Home Space</h5>
                 <p className="card-text réalisation-text">
-                  This is a wider card with supporting text below as a natural
-                  lead-in to additional.
+                  Réalisation D'un Site Vitrine
                 </p>
                 <div className="button-container">
-                  <a href="/" className="btn btn-outline-primary btn-sm">
+                  <a
+                    href="https://desteur1.github.io/my-home-space/"
+                    className="btn btn-outline-primary btn-sm"
+                  >
                     voir
                   </a>
                 </div>
               </div>
               <div className="card-footer">
-                <small className="text-muted">Last updated 3 mins ago</small>
+                <small className="text-muted">
+                  {" "}
+                  Site réalisé avec HTML/CSS
+                </small>
               </div>
             </div>
           </div>

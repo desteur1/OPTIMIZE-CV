@@ -13,6 +13,7 @@ import linkedin from "./styles/images/linkedin-logo.png";
 import github from "./styles/images/github-logo.png";
 import "./styles/Footer.css";
 import Blog from "./pages/Blog";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
@@ -47,7 +48,7 @@ function App() {
               <a className="nav-link" href="/Blog">
                 Blog
               </a>
-              <a className="nav-link" href="/">
+              <a className="nav-link" href="/Contact">
                 Me Contacter
               </a>
             </div>
@@ -64,10 +65,11 @@ function App() {
         <Route path="/Réalisation" element={<Réalisation />}></Route>
         <Route path="/Services" element={<Services />}></Route>
         <Route path="/Blog" element={<Blog />}></Route>
+        <Route path="/Contact" element={<Contact />}></Route>
       </Routes>
 
       {/* footer */}
-      <div className="container-fluid mt-5  text-center">
+      <div className="container-fluid text-center">
         <div className="row align-items-start pt-5 footer-container">
           <div className="col-lg-3 col-12 col-md-6  mb-md-4">
             <address>
