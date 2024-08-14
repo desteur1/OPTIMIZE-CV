@@ -14,6 +14,7 @@ import github from "./styles/images/github-logo.png";
 import "./styles/Footer.css";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
+import Mention from "./pages/Mention";
 
 function App() {
   return (
@@ -57,15 +58,15 @@ function App() {
       </div>
       <Routes>
         <Route path="/" element={<Home />}></Route>
-      </Routes>
-      <Routes>
+
         <Route path="/" element={<About />}></Route>
-      </Routes>
-      <Routes>
+
         <Route path="/Réalisation" element={<Réalisation />}></Route>
         <Route path="/Services" element={<Services />}></Route>
         <Route path="/Blog" element={<Blog />}></Route>
         <Route path="/Contact" element={<Contact />}></Route>
+
+        <Route path="/Mention" element={<Mention />}></Route>
       </Routes>
 
       {/* footer */}
@@ -142,7 +143,7 @@ function App() {
                 <a href="#/">Me contacter</a>
               </li>
               <li>
-                <a href="#/">Mentions légales</a>
+                <a href="/Mention">Mentions légales</a>
               </li>
             </ul>
           </div>
