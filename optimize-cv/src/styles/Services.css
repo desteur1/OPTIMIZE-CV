@@ -15,6 +15,7 @@
 .first-p {
   text-align: center;
   padding: 0 !important;
+  margin-bottom: 15px !important;
 }
 .service-container__line2 {
   width: 15%;
