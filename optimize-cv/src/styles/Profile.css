@@ -1,0 +1,16 @@
+.user-container {
+  text-align: center;
+}
+.profile-title {
+  margin: 20px 0 !important;
+}
+.profile-login {
+  color: #1e1e1e !important;
+  margin: 10px 0;
+}
+.profile-boi {
+  padding-top: 10px !important;
+}
+.profile-repo {
+  color: #0d6efd;
+}

@@ -1,13 +1,6 @@
-/* .navbar-nav {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-}
-.navbar-brand {
-  text-align: center;
-} */
-.navbar a {
-  color: white !important;
+.nav-link.active-link {
+  color: #ffffff; /* Color for the active link */
+  font-weight: bold; /* Optional: make the active link bold */
 }
 
 @media (min-width: 800px) and (max-width: 992px) {
