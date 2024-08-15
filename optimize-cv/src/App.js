@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./styles/Nav.css";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, NavLink } from "react-router-dom";
 import "./styles/App.css";
 import Home from "./pages/Home";
 import About from "./pages/AboutMe";
@@ -15,15 +15,17 @@ import "./styles/Footer.css";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import Mention from "./pages/Mention";
+import Profile from "./pages/Profile";
+import Copy from "./pages/Copyright";
 
 function App() {
   return (
     <div className="App">
       <div className="container-fluid p-0">
         <nav className="navbar navbar-expand-lg  navbar-dark bg-dark ">
-          <a className="navbar-brand col-md-3 text-center " href="/">
+          <NavLink className="navbar-brand col-md-3 text-center " href="/">
             Desteur Fall
-          </a>
+          </NavLink>
           <button
             className="navbar-toggler"
             type="button"
@@ -37,36 +39,59 @@ function App() {
           </button>
           <div className="collapse navbar-collapse " id="navbarNavAltMarkup">
             <div className="navbar-nav col-md-4 offset-lg-5  w-100 grid gap-0 column-gap-4">
-              <a className="nav-link active" aria-current="page" href="/">
-                Acceuil
-              </a>
-              <a className="nav-link" href="/Services">
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive ? "nav-link active-link" : "nav-link"
+                }
+              >
+                Accueil
+              </NavLink>
+              <NavLink
+                to="/Services"
+                className={({ isActive }) =>
+                  isActive ? "nav-link active-link" : "nav-link"
+                }
+              >
                 Services
-              </a>
-              <a className="nav-link" href="/Réalisation">
-                Réalisation
-              </a>
-              <a className="nav-link" href="/Blog">
+              </NavLink>
+              <NavLink
+                to="/Réalisation"
+                className={({ isActive }) =>
+                  isActive ? "nav-link active-link" : "nav-link"
+                }
+              >
+                Réalisations
+              </NavLink>
+              <NavLink
+                to="/Blog"
+                className={({ isActive }) =>
+                  isActive ? "nav-link active-link" : "nav-link"
+                }
+              >
                 Blog
-              </a>
-              <a className="nav-link" href="/Contact">
+              </NavLink>
+              <NavLink
+                to="/Contact"
+                className={({ isActive }) =>
+                  isActive ? "nav-link active-link" : "nav-link"
+                }
+              >
                 Me Contacter
-              </a>
+              </NavLink>
             </div>
           </div>
         </nav>
       </div>
       <Routes>
         <Route path="/" element={<Home />}></Route>
-
         <Route path="/" element={<About />}></Route>
-
         <Route path="/Réalisation" element={<Réalisation />}></Route>
         <Route path="/Services" element={<Services />}></Route>
         <Route path="/Blog" element={<Blog />}></Route>
         <Route path="/Contact" element={<Contact />}></Route>
-
         <Route path="/Mention" element={<Mention />}></Route>
+        <Route path="/Profile" element={<Profile />}></Route>
       </Routes>
 
       {/* footer */}
@@ -140,7 +165,7 @@ function App() {
                 <a href="#/">Services</a>
               </li>
               <li>
-                <a href="#/">Me contacter</a>
+                <a href="/Profile">Me contacter</a>
               </li>
               <li>
                 <a href="/Mention">Mentions légales</a>
@@ -171,18 +196,19 @@ function App() {
             </p>
             <ul className="custom-list">
               <li>
-                <a href="#/">Home space</a>
+                <a href="#/">Coder son site en HTML/CSS</a>
               </li>
               <li>
-                <a href="#/">Commentaire dynamique</a>
+                <a href="#/">Vendre ses produits sur le web</a>
               </li>
               <li>
-                <a href="#/">porfolio</a>
+                <a href="#/">Se positionner sur Google</a>
               </li>
             </ul>
           </div>
         </div>
       </div>
+      <Copy></Copy>
     </div>
   );
 }
