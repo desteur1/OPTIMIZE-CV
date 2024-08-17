@@ -3,15 +3,18 @@ import Profile from "../styles/images/about-bg.jpg";
 
 const About = () => {
   return (
-    <div className="container wrapper py-5 px-2 mt-5 border border-3 rounded shadow">
+    <div
+      className="container wrapper pt-5 pb-4 px-2 mt-5 mb-5 border border-3 rounded shadow"
+      id="about"
+    >
       <div className="wrapper-first-item">
         <h3>À propos</h3>
         <div className="line-1"></div>
         <article className="first-p">
           <p>
             Passionné par l'informatique et les nouvelles technologies, j'ai
-            suivi une formation d'<strong>intergrateur-développeur web</strong>{" "}
-            au CEF. Au cours de cette formation,j'ai pu acquérir des bases
+            suivi une formation d'<strong>intégrateur-développeur web</strong>{" "}
+            au CEF. Au cours de cette formation, j'ai pu acquérir des bases
             solides pour travailler dans le domaine du{" "}
             <strong>développeur web</strong>.
           </p>
@@ -24,7 +27,7 @@ const About = () => {
 
           <p>
             J'accorde une attention particulière à la qualité du code que
-            j'écris et je respecte les bonne pratiques du web.
+            j'écris et je respecte les bonnes pratiques du web.
           </p>
         </article>
       </div>

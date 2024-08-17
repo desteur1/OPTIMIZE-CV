@@ -1,9 +1,5 @@
 /* the ::before is a pseudo classe in css. here we create the overlay with it and content:'', tmake sure the overlay doesn't have no text message. that we then give a bg and opacity to it. */
 
-.hero-bg {
-  position: relative;
-}
-
 .home-container::after {
   content: "";
   position: absolute;
@@ -33,6 +29,7 @@
   text-align: center;
   color: white;
   padding: 1rem; /* Default padding */
+  z-index: 2;
 }
 .text-container h1,
 h2 {

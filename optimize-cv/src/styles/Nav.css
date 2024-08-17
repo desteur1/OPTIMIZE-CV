@@ -2,6 +2,20 @@
   color: #ffffff; /* Color for the active link */
   font-weight: bold; /* Optional: make the active link bold */
 }
+.navbar-brand {
+  text-transform: uppercase;
+}
+.navbar-nav {
+  text-transform: uppercase;
+}
+@media (max-width: 576px) {
+  .navbar-brand {
+    padding-left: 1.7em;
+  }
+  .navbar-nav {
+    padding-left: 2em;
+  }
+}
 
 @media (min-width: 800px) and (max-width: 992px) {
   .navbar-nav {

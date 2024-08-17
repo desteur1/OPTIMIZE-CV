@@ -12,3 +12,10 @@ strong {
   font-weight: 600 !important;
   color: #1e1e1e;
 }
+strong {
+  font-size: 1.2em;
+}
+a:hover {
+  color: white;
+  opacity: 0.8;
+}
