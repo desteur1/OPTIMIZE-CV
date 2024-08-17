@@ -3,7 +3,8 @@
 }
 .line-1 {
   height: 2px;
-  background: blue;
+  background: #0d6efd;
+  margin-bottom: 20px;
 }
 
 .wrapper-first-item {
@@ -22,6 +23,7 @@
 }
 .wrapper-second-item h2 {
   color: #1e1e1e !important;
+  padding-top: 10px;
 }
 
 @media (max-width: 576px) {

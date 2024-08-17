@@ -1,10 +1,8 @@
 import React from "react";
-
 import "./styles/Nav.css";
 import { Route, Routes, NavLink } from "react-router-dom";
 import "./styles/App.css";
 import Home from "./pages/Home";
-import About from "./pages/AboutMe";
 import Réalisation from "./pages/Réalisation";
 import Services from "./pages/Services";
 // Footer import
@@ -21,7 +19,7 @@ import Copy from "./pages/Copyright";
 function App() {
   return (
     <div className="App">
-      <div className="container-fluid p-0">
+      <div className="container-fluid p-0" id="home-img">
         <nav className="navbar navbar-expand-lg  navbar-dark bg-dark ">
           <NavLink className="navbar-brand col-md-3 text-center " href="/">
             Desteur Fall
@@ -83,9 +81,9 @@ function App() {
           </div>
         </nav>
       </div>
+
       <Routes>
         <Route path="/" element={<Home />}></Route>
-        <Route path="/" element={<About />}></Route>
         <Route path="/Réalisation" element={<Réalisation />}></Route>
         <Route path="/Services" element={<Services />}></Route>
         <Route path="/Blog" element={<Blog />}></Route>
@@ -95,7 +93,7 @@ function App() {
       </Routes>
 
       {/* footer */}
-      <div className="container-fluid text-center">
+      <div className="container-fluid text-center footer">
         <div className="row align-items-start pt-5 footer-container">
           <div className="col-lg-3 col-12 col-md-6  mb-md-4">
             <address>
@@ -156,13 +154,13 @@ function App() {
             </p>
             <ul className="custom-list">
               <li>
-                <a href="#/">Acceuil</a>
+                <a href="/#home-img">Accueil</a>
               </li>
               <li>
-                <a href="#/">À propos</a>
+                <a href="/#about">À propos</a>
               </li>
               <li>
-                <a href="#/">Services</a>
+                <a href="/Services">Services</a>
               </li>
               <li>
                 <a href="/Profile">Me contacter</a>
@@ -175,34 +173,34 @@ function App() {
           {/* third column */}
           <div className="col-lg-3 col-12 col-md-6  mb-md-4  mb-s-2">
             <p className="my-name link-item">
-              <strong>Mes dernières réalisations</strong>
+              <strong>Mes dernièrs réalisations</strong>
             </p>
             <ul className="custom-list">
               <li>
-                <a href="#/">Home space</a>
+                <a href="/Réalisation/#home-space">Home space</a>
               </li>
               <li>
-                <a href="#/">Commentaire dynamique</a>
+                <a href="/Réalisation/#home-space">Commentaire dynamique</a>
               </li>
               <li>
-                <a href="#/">porfolio</a>
+                <a href="/Réalisation/#home-space">porfolio</a>
               </li>
             </ul>
           </div>
           {/* forth column */}
           <div className="col-lg-3 col-12 col-md-6 mb-md-4 mb-s-2">
             <p className="my-name link-item">
-              <strong>Mes dernières articles</strong>
+              <strong>Mes dernièrs articles</strong>
             </p>
             <ul className="custom-list">
               <li>
-                <a href="#/">Coder son site en HTML/CSS</a>
+                <a href="/Blog/#blog-article">Coder son site en HTML/CSS</a>
               </li>
               <li>
-                <a href="#/">Vendre ses produits sur le web</a>
+                <a href="/blog-article">Vendre ses produits sur le web</a>
               </li>
               <li>
-                <a href="#/">Se positionner sur Google</a>
+                <a href="/blog-article">Se positionner sur Google</a>
               </li>
             </ul>
           </div>

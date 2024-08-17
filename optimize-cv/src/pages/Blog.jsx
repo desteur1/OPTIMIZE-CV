@@ -9,10 +9,12 @@ import Technos from "../styles/images/technos.png";
 
 const Blog = () => {
   return (
-    <div className="blog-container mb-5">
+    <div className="blog-container mb-5" id="blog-article">
       <img src={Blogbg} alt="Blog background" className="img-fluid" />
       <h1>Blog</h1>
-      <p className="first-p">Voici quelques-unes de mes réalisations.</p>
+      <p className="first-pp">
+        Retrouvez ici quelques articles sur le développement web.
+      </p>
       <div className="blog-container__line1"></div>
       <div className="container my-5">
         <div className="row">
@@ -40,7 +42,7 @@ const Blog = () => {
                 </a>
               </div>
               <div className="card-footer foot-blog">
-                <small className="text-muted">Last updated 3 mins ago</small>
+                <small className="text-muted">Publié le 22 août 2022</small>
               </div>
             </div>
           </div>
@@ -69,7 +71,7 @@ const Blog = () => {
                 </a>
               </div>
               <div className="card-footer foot-blog">
-                <small className="text-muted">Last updated 3 mins ago</small>
+                <small className="text-muted">Publié le 20 août 2022</small>
               </div>
             </div>
           </div>
@@ -98,7 +100,7 @@ const Blog = () => {
                 </a>
               </div>
               <div className="card-footer foot-blog">
-                <small className="text-muted">Last updated 3 mins ago</small>
+                <small className="text-muted">Publié le 1 août 2022</small>
               </div>
             </div>
           </div>
@@ -126,7 +128,7 @@ const Blog = () => {
                 </a>
               </div>
               <div className="card-footer foot-blog">
-                <small className="text-muted">Last updated 3 mins ago</small>
+                <small className="text-muted">Publié le 31 juillet 2022</small>
               </div>
             </div>
           </div>
@@ -154,7 +156,7 @@ const Blog = () => {
                 </a>
               </div>
               <div className="card-footer foot-blog">
-                <small className="text-muted">Last updated 3 mins ago</small>
+                <small className="text-muted">Publié le 30 juillet 2022</small>
               </div>
             </div>
           </div>
@@ -180,7 +182,7 @@ const Blog = () => {
                 </a>
               </div>
               <div className="card-footer foot-blog">
-                <small className="text-muted">Last updated 3 mins ago</small>
+                <small className="text-muted">Publié le 12 juillet 2022</small>
               </div>
             </div>
           </div>

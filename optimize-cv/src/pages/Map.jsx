@@ -54,33 +54,30 @@ const MapComponent = () => {
   const [map, setMap] = useState(null);
   const [selectedMarker, setSelectedMarker] = useState(null);
 
-  // This useEffect can be used to perform actions with the map instance
   useEffect(() => {
     if (map) {
-      // Example: Center map to a specific location when the map instance is available
       map.setCenter(center);
-      // You can add additional side effects or interactions with the map instance here
     }
-  }, [map]); // Dependency array includes `map`, so it runs when `map` changes
+  }, [map]);
 
   return (
-    <LoadScript googleMapsApiKey="AIzaSyAGwNTcgVSccc_umu0y24EojscHU2T5dZk">
+    <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEYnpm}>
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
         zoom={10}
         mapId={mapId}
-        onLoad={(mapInstance) => setMap(mapInstance)} // Set map instance on load
+        onLoad={(mapInstance) => setMap(mapInstance)}
       >
         <Marker
           position={markerPosition}
           title="9 Rue Des Guyonnes"
-          onClick={() => setSelectedMarker(markerPosition)} // Set the selected marker position
+          onClick={() => setSelectedMarker(markerPosition)}
         />
         {selectedMarker ? (
           <InfoWindow
             position={selectedMarker}
-            onCloseClick={() => setSelectedMarker(null)} // Close the info window
+            onCloseClick={() => setSelectedMarker(null)}
           >
             <div>
               <h4>9 Rue Des Guyonnes</h4>

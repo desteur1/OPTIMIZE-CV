@@ -1,18 +1,43 @@
 .service-container h1 {
   text-align: center;
+  margin-top: 20px;
 }
-
 .img-S {
   width: 50px !important;
   height: auto;
   margin-left: auto;
   margin-right: auto;
 }
+.icon-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.icon-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #cde1f8;
+  opacity: 0;
+  transition: opacity 0.3s;
+  mix-blend-mode: color;
+  pointer-events: none;
+}
+.service-container__card:hover .icon-wrapper::after {
+  opacity: 0.7;
+}
+
+.service-container__card:hover .img-S {
+  color: #cde1f8;
+}
 /* .last-child {
   width: 80px;
   height: auto;
 } */
-.first-p {
+.first-pp {
   text-align: center;
   padding: 0 !important;
   margin-bottom: 15px !important;
@@ -22,7 +47,7 @@
   margin-left: auto;
   margin-right: auto;
   height: 4px;
-  background: blue;
+  background: #0d6efd;
 }
 
 .service-container__group {

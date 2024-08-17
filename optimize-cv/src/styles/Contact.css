@@ -12,6 +12,27 @@
   margin: 0;
   box-sizing: border-box;
 } */
+
+.contact-title {
+  text-align: center;
+  text-transform: uppercase;
+}
+.contact-content {
+  text-align: center;
+}
+.contact-container__line2 {
+  width: 15%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 4px;
+  background: #0d6efd;
+  margin-bottom: 30px;
+}
+.form-line {
+  height: 2px;
+  background: #0d6efd;
+  margin-bottom: 30px;
+}
 .con-form {
   display: flex;
   /* margin: 0 2rem 0 2rem; */
@@ -21,7 +42,7 @@
   background: white;
   position: relative;
   z-index: 2;
-  padding: 4rem;
+  padding: 3rem;
 }
 
 .form-group {
@@ -31,13 +52,14 @@ input,
 textarea {
   width: 100%;
   padding: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   outline: 0;
   border: 1px solid black;
   border-radius: 10px;
 }
 .con-h2 {
   color: #1e1e1e !important;
+  text-align: start;
 }
 .google-map {
   width: 50%;
@@ -63,4 +85,47 @@ textarea {
 }
 .google-map {
   margin-left: 1rem;
+}
+.map-adress-item {
+  text-align: start;
+}
+.map-adress-item a {
+  text-decoration: none;
+  color: #1e1e1e !important;
+}
+@media (max-width: 576px) {
+  .con-form {
+    display: block;
+  }
+  .form-group {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .google-map {
+    width: 100%;
+    margin-left: 0;
+  }
+  .modal-background {
+    padding: 10px 20px 40px 20px;
+  }
+  .contact-content {
+    margin: 0;
+    padding: 3rem 5rem;
+  }
+}
+@media (min-width: 576px) and (max-width: 992px) {
+  .contact-content {
+    padding: 2rem;
+  }
+
+  .contact-content-span {
+    display: block;
+  }
+  .map-adress-item {
+    margin-bottom: 5px;
+  }
+  input,
+  textarea {
+    margin-bottom: 12px;
+  }
 }

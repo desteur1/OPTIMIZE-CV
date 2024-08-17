@@ -134,7 +134,7 @@ const Mention = () => {
             >
               <div className="accordion-body">
                 <h3>Crédits</h3>
-                <p>Site développer par Desteur Fall, étudiant du CEF.</p>
+                <p>Site développé par Desteur Fall, étudiant du CEF.</p>
                 <p>
                   Les images libres de droit sont issues du site{" "}
                   <span>

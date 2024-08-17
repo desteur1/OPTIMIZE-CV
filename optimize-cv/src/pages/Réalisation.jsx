@@ -9,8 +9,8 @@ const Réalisation = () => {
   return (
     <div className="réalisation-container">
       <img src={Servicebg} alt="service background" className="img-fluid" />
-      <h1>Mon Portfolio</h1>
-      <p className="first-p">Voici quelques-unes de mes réalisations.</p>
+      <h1> Portfolio</h1>
+      <p className="first-pp">Voici quelques-unes de mes réalisations.</p>
       <div className="service-container__line2"></div>
       <div className="container my-5 ">
         <div className="row">
@@ -25,7 +25,8 @@ const Réalisation = () => {
               <div className="card-body réalisation-body">
                 <h5 className="card-title réalisation-title">Mon Portfolio</h5>
                 <p className="card-text réalisation-text">
-                  Réalisation D'un Site Personnel CV Digitaux.
+                  Réalisation d'un site personnel <br />
+                  <span className="center-span">"CV digital"</span>
                 </p>
                 <div className="button-container">
                   <a
@@ -54,10 +55,10 @@ const Réalisation = () => {
               />
               <div className="card-body réalisation-body">
                 <h5 className="card-title réalisation-title">
-                  Commentaire Dynamique
+                  Commentaire dynamique
                 </h5>
                 <p className="card-text réalisation-text">
-                  Réalisation D'un Site Static
+                  Réalisation d'un site web
                 </p>
                 <div className="button-container">
                   <a
@@ -77,7 +78,7 @@ const Réalisation = () => {
           </div>
 
           {/* Third Card  */}
-          <div className="col-lg-4 col-md-6 last-child">
+          <div className="col-lg-4 col-md-6 last-child" id="home-space">
             <div className="card border réalisation-container__card rounded-top">
               <img
                 src={homespace}
@@ -87,7 +88,8 @@ const Réalisation = () => {
               <div className="card-body réalisation-body">
                 <h5 className="card-title réalisation-title">My Home Space</h5>
                 <p className="card-text réalisation-text">
-                  Réalisation D'un Site Vitrine
+                  Réalisation d'un site vitrine <br />{" "}
+                  <span className="center-span">"Home-Space"</span>
                 </p>
                 <div className="button-container">
                   <a

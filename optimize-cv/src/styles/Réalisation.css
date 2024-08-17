@@ -1,6 +1,7 @@
 .réalisation-container h1 {
   text-align: center;
   padding-top: 20px;
+  text-transform: uppercase;
 }
 
 .img-p {
@@ -12,6 +13,13 @@
 .réalisation-title {
   padding-top: 10px;
   text-align: center;
+}
+.réalisation-text {
+  text-align: center;
+}
+.center-span {
+  display: flex;
+  justify-content: center;
 }
 .button-container {
   text-align: center;
