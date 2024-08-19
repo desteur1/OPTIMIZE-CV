@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles/Nav.css";
 import { Route, Routes, NavLink } from "react-router-dom";
-import "./styles/App.css";
+
 import Home from "./pages/Home";
 import Réalisation from "./pages/Réalisation";
 import Services from "./pages/Services";
@@ -111,7 +111,7 @@ function App() {
                 <a
                   href="https://github.com/desteur1"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="nofollow noreferrer"
                 >
                   {" "}
                   <img
@@ -123,7 +123,7 @@ function App() {
                 <a
                   href="https://www.linkedin.com/in/piepenche-fall-desteur-3715032ab/"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="nofollow noreferrer"
                 >
                   {" "}
                   <img
@@ -135,7 +135,7 @@ function App() {
                 <a
                   href="https://x.com/falldesteur"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="nofollow noreferrer"
                 >
                   {" "}
                   <img
@@ -163,7 +163,7 @@ function App() {
                 <a href="/Services">Services</a>
               </li>
               <li>
-                <a href="/Profile">Me contacter</a>
+                <a href="/Contact">Me contacter</a>
               </li>
               <li>
                 <a href="/Mention">Mentions légales</a>

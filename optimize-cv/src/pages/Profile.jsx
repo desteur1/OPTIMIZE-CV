@@ -26,7 +26,11 @@ function Profile() {
       <main>
         <article key={user.id}>
           <h2 className="profile-login">{user.login}</h2>
-          <img src={user.avatar_url} alt={user.login} />
+          <img
+            src={user.avatar_url}
+            alt={user.login}
+            className="profile-avatar"
+          />
 
           <p className="profile-boi">{user.bio}</p>
           <p>Abonnés : {user.followers}</p>

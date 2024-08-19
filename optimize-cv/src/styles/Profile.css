@@ -1,3 +1,8 @@
+main a {
+  text-decoration: none;
+  color: #1e1e1e;
+}
+
 .user-container {
   text-align: center;
 }
@@ -13,4 +18,13 @@
 }
 .profile-repo {
   color: #0d6efd;
+}
+
+@media (max-width: 576px) {
+  .profile-avatar {
+    max-width: 100%;
+  }
+  .user-container {
+    padding: 3px;
+  }
 }
