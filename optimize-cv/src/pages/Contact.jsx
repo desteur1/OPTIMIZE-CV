@@ -1,4 +1,5 @@
 // import ContactBg from "../styles/images/contact-bg.jpg";
+import ContactForm from "./ContactForm";
 import "../styles/Contact.css";
 import MapComponent from "./Map";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,7 +13,9 @@ const Contact = () => {
     <div className="modal-background">
       {/* <img className="img-fluid" src={ContactBg} alt="" /> */}
       <div className="contact-content">
-        <h1 className="contact-title">Me contacter</h1>
+        <h1 className="contact-title">
+          <span className="contact-title-span">Me</span> contacter
+        </h1>
         <p>
           Pour me contacter en vue d'un entretien ou d'une future{" "}
           <span className="contact-content-span">
@@ -21,55 +24,7 @@ const Contact = () => {
         </p>
         <div className="contact-container__line2"></div>
         <div className="con-form">
-          <div className="form-group">
-            <form name="form">
-              <h2 className="con-h2">Formulaire de contact</h2>
-              <div className="form-line"></div>
-              <label htmlFor="name"></label>
-              <input
-                type="text"
-                id="name"
-                placeholder="Votre nom"
-                autoComplete="name"
-              />
-
-              <label htmlFor="email"></label>
-              <input
-                type="text"
-                id="email"
-                placeholder="Votre adresse email"
-                autoComplete="email"
-              />
-
-              <label htmlFor="phone"></label>
-              <input
-                type="tel"
-                id="phone"
-                placeholder="Votre numéro de téléphone"
-                autoComplete="tel"
-              />
-
-              <label htmlFor="object"></label>
-              <input
-                type="text"
-                id="object"
-                placeholder="sujet"
-                autoComplete="off"
-              />
-
-              <label htmlFor="message"></label>
-              <textarea
-                name="message"
-                id="message"
-                rows="8"
-                placeholder="Votre message"
-                autoComplete="off"
-              ></textarea>
-              <button type="button" className="btn btn-primary">
-                Envoyer
-              </button>
-            </form>
-          </div>
+          <ContactForm></ContactForm>
           <div className="google-map">
             <h2 className="con-h2">Mes coordonnées</h2>
             <div className="form-line"></div>

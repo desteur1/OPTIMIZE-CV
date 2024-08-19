@@ -33,11 +33,6 @@ import {
   InfoWindow,
 } from "@react-google-maps/api";
 
-const containerStyle = {
-  width: "100%",
-  height: "400px",
-};
-
 const center = {
   lat: 48.99002,
   lng: 1.79965,
@@ -53,6 +48,38 @@ const mapId = "b8b2d39b74a4ee9b";
 const MapComponent = () => {
   const [map, setMap] = useState(null);
   const [selectedMarker, setSelectedMarker] = useState(null);
+  const [containerStyle, setContainerStyle] = useState({
+    width: "100%",
+    height: "400px", // Default height
+  });
+
+  useEffect(() => {
+    // Function to update map container height
+    const updateContainerHeight = () => {
+      if (window.innerWidth <= 600) {
+        setContainerStyle({
+          width: "100%",
+          height: "250px",
+        });
+      } else {
+        setContainerStyle({
+          width: "100%",
+          height: "400px",
+        });
+      }
+    };
+
+    // Initial call to set the correct height
+    updateContainerHeight();
+
+    // Add resize event listener
+    window.addEventListener("resize", updateContainerHeight);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", updateContainerHeight);
+    };
+  }, []);
 
   useEffect(() => {
     if (map) {
@@ -61,11 +88,11 @@ const MapComponent = () => {
   }, [map]);
 
   return (
-    <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEYnpm}>
+    <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY}>
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
-        zoom={10}
+        zoom={16}
         mapId={mapId}
         onLoad={(mapInstance) => setMap(mapInstance)}
       >

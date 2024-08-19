@@ -1,18 +1,3 @@
-/* .modal-overlay {
-  position: relative;
-}
-.modal-content {
-  width: 80%;
-  height: 80%;
-  position: absolute;
-  top: 7%;
-  left: 10%;
-
-  background: white;
-  margin: 0;
-  box-sizing: border-box;
-} */
-
 .contact-title {
   text-align: center;
   text-transform: uppercase;
@@ -44,6 +29,9 @@
   z-index: 2;
   padding: 3rem;
 }
+.form {
+  width: 50%;
+}
 
 .form-group {
   width: 50%;
@@ -54,7 +42,7 @@ textarea {
   padding: 10px;
   margin-bottom: 20px;
   outline: 0;
-  border: 1px solid black;
+  border: 0.5px solid #1e1e1e;
   border-radius: 10px;
 }
 .con-h2 {
@@ -94,12 +82,24 @@ textarea {
   color: #1e1e1e !important;
 }
 @media (max-width: 576px) {
+  .contact-title {
+    font-size: 2em;
+  }
+  .con-h2 {
+    font-size: 2em;
+  }
+  textarea {
+    height: 150px;
+  }
   .con-form {
     display: block;
   }
   .form-group {
     width: 100%;
     margin-bottom: 20px;
+  }
+  .form {
+    width: 100%;
   }
   .google-map {
     width: 100%;
@@ -110,7 +110,7 @@ textarea {
   }
   .contact-content {
     margin: 0;
-    padding: 3rem 5rem;
+    padding: 3rem 3rem;
   }
 }
 @media (min-width: 576px) and (max-width: 992px) {
