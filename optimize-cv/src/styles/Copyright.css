@@ -1,6 +1,43 @@
-.copyright {
-  text-align: center !important;
+/* .copyright {
+  text-align: center;
   background: #1e1e1e;
   color: #eee;
   padding: 10px 0;
+} */
+/* footer cnrainer for the button*/
+.scroll-to-top {
+  margin-top: 10px;
+  width: 100%;
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  display: none; /*start a hidden point*/
+  text-align: center;
+}
+/* show the footer when the button is visible*/
+.scroll-to-top.visible {
+  display: block;
+  background: #000000;
+  padding: 5px 0;
+}
+/*hide the footer when the button is not visible*/
+.scroll-to-top.hidden {
+  display: none;
+}
+
+/*button styling*/
+.scroll-to-top-button {
+  text-decoration: none;
+  color: white;
+  background: #000000;
+  border: none;
+}
+
+.scroll-to-top-button:hover {
+  background: #298eff;
+}
+@media (max-width: 576px) {
+  .scroll-to-top-button {
+    font-size: 0.8em;
+  }
 }

@@ -1,30 +1,63 @@
 import "../styles/Copyright.css";
 
-import { useEffect, useCallback } from "react";
+import { useEffect, useState } from "react";
+
+// const Copy = () => {
+// const scrollToTop = useCallback(() => {
+//   window.scrollTo({ top: 0, behavior: "smooth", scrollToTop });
+// }, []);  storing scrolltotop(function) in usecallback to prevent re-rendering
+// useEffect(() => {
+//   let buttonCopy = document.querySelector(".btn-b");
+//   let element = document.querySelector(".copyright");
+//   if (element) {
+//     element.innerHTML = "&#169; Designed by Desteur Fall";
+//     element.style.cursor = "pointer";
+//     element.addEventListener("click", scrollToTop);
+//   }
+//   buttonCopy.innerHTML = element;
+//   return () => {
+//     if (element) {
+//       element.removeEventListener("click", scrollToTop);
+//     }
+//   };
+// }, [scrollToTop]);  Include scrollToTop in the dependency array
 
 const Copy = () => {
-  const scrollToTop = useCallback(() => {
-    window.scrollTo({ top: 0, behavior: "smooth", scrollToTop });
-  }, []); // storing scrolltotop(function) in usecallback to prevent re-rendering
-  useEffect(() => {
-    let element = document.querySelector(".copyright");
-    if (element) {
-      element.innerHTML = "&#169; Designed by Desteur Fall";
-      element.style.cursor = "pointer";
-      element.addEventListener("click", scrollToTop);
+  const [isVisible, setIsVisible] = useState(false);
+
+  const checkScrollPosition = () => {
+    if (window.scrollY + window.innerHeight >= document.body.offsetHeight) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(false);
     }
+  };
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", checkScrollPosition);
     return () => {
-      if (element) {
-        element.removeEventListener("click", scrollToTop);
-      }
+      window.removeEventListener("scroll", checkScrollPosition);
     };
-  }, [scrollToTop]); // Include scrollToTop in the dependency array
+  }, []);
 
   return (
     <div>
-      <p className="copyright"></p>
+      <p className={`scroll-to-top ${isVisible ? "visible" : "hidden"}`}>
+        <button
+          type="button"
+          onClick={scrollToTop}
+          className="scroll-to-top-button"
+        >
+          &#169; Designed by Desteur Fall
+        </button>
+      </p>
     </div>
   );
 };
-
+// };
 export default Copy;

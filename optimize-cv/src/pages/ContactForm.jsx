@@ -1,5 +1,5 @@
 // ContactForm.js
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import emailjs from "emailjs-com";
 import "../styles/Contact.css";
 
@@ -15,6 +15,25 @@ const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [isServiceAvailable, setisServiceAvailable] = useState(null);
+
+  const serviceID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+  const templateID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+  const userID = process.env.REACT_APP_EMAILJS_USER_ID;
+
+  useEffect(() => {
+    const checkEmailJsAvailable = async () => {
+      try {
+        await emailjs.send(serviceID, templateID, {}, userID); //The code is checking if the EmailJS service is available by attempting to send a "test" email with no content.
+        //templateParams(the empty braket) Is Required: Even if you don’t have dynamic data to pass, you must include an empty object ({}) as the templateParams to fulfill the function’s requirements.
+        setisServiceAvailable(true);
+      } catch (error) {
+        setisServiceAvailable(false);
+        setErrorMessage("Service indisponible.Veillez réessayer plus tard.");
+      }
+    };
+    checkEmailJsAvailable();
+  }, [serviceID, templateID, userID]); //you’re telling React Re-run this useEffect every time one of these variables (serviceID, templateID, userID) changes.
 
   const handleChange = (e) => {
     const { id, value } = e.target;
@@ -24,16 +43,12 @@ const ContactForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    //i tried accessing it with env but it is not working dunno why
-    const serviceID = "service_dkhydd5";
-    const templateID = "template_1w4ysm9";
-    const userID = "NBdtV3uQCrULdbS_S";
 
     emailjs
       .send(serviceID, templateID, formData, userID)
       .then(() => {
         setIsSubmitting(false);
-        setSuccessMessage("Form submitted successfully!");
+        setSuccessMessage("Formulaire soumis avec succès !");
         setErrorMessage("");
         setFormData({
           name: "",
@@ -45,10 +60,13 @@ const ContactForm = () => {
       })
       .catch(() => {
         setIsSubmitting(false);
-        setErrorMessage("Failed to submit the form. Please try again.");
+        setErrorMessage("Echec de l'envoi du formulaire. Veuillez réessayer.");
         setSuccessMessage("");
       });
   };
+  if (isServiceAvailable === null) {
+    return <p>Vérification de la disponibilité du service...</p>;
+  }
 
   return (
     <form className="form" name="form" onSubmit={handleSubmit}>
@@ -63,6 +81,7 @@ const ContactForm = () => {
         required
         value={formData.name}
         onChange={handleChange}
+        disabled={!isServiceAvailable}
       />
 
       <label htmlFor="email"></label>
@@ -74,6 +93,7 @@ const ContactForm = () => {
         required
         value={formData.email}
         onChange={handleChange}
+        disabled={!isServiceAvailable}
       />
 
       <label htmlFor="phone"></label>
@@ -85,6 +105,7 @@ const ContactForm = () => {
         required
         value={formData.phone}
         onChange={handleChange}
+        disabled={!isServiceAvailable}
       />
 
       <label htmlFor="subject"></label>
@@ -96,6 +117,7 @@ const ContactForm = () => {
         required
         value={formData.subject}
         onChange={handleChange}
+        disabled={!isServiceAvailable}
       />
 
       <label htmlFor="message"></label>
@@ -108,6 +130,7 @@ const ContactForm = () => {
         required
         value={formData.message}
         onChange={handleChange}
+        disabled={!isServiceAvailable}
       ></textarea>
       <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
         {isSubmitting ? "Envoi en cours..." : "Envoyer"}
