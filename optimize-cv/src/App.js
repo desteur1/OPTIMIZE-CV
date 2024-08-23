@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles/Nav.css";
-import { Route, Routes, NavLink } from "react-router-dom";
+import { Route, Routes, NavLink, Link } from "react-router-dom";
 
 import Home from "./pages/Home";
 import Réalisation from "./pages/Réalisation";
@@ -108,11 +108,7 @@ function App() {
                 Téléphone: <a href="tel:+33751914122">0751914122</a>
               </p>
               <div className="media-container">
-                <a
-                  href="https://github.com/desteur1"
-                  target="_blank"
-                  rel="nofollow noreferrer"
-                >
+                <a href="Profile" target="_blank" rel="nofollow noreferrer">
                   {" "}
                   <img
                     className="social-media"
@@ -154,36 +150,36 @@ function App() {
             </p>
             <ul className="custom-list">
               <li>
-                <a href="/#home-img">Accueil</a>
+                <Link to="/#navbarNavAltMarkup">Accueil</Link>
               </li>
               <li>
-                <a href="/#about">À propos</a>
+                <Link to="/#about">À propos</Link>
               </li>
               <li>
-                <a href="/Services">Services</a>
+                <Link to="/Services">Services</Link>
               </li>
               <li>
-                <a href="/Contact">Me contacter</a>
+                <Link to="/Contact">Me contacter</Link>
               </li>
               <li>
-                <a href="/Mention">Mentions légales</a>
+                <Link to="/Mention">Mentions légales</Link>
               </li>
             </ul>
           </div>
           {/* third column */}
           <div className="col-lg-3 col-12 col-md-6  mb-md-4  mb-s-2">
-            <p className="my-name link-item">
+            <p className="my-name link-item adjust-self">
               <strong>Mes dernièrs réalisations</strong>
             </p>
             <ul className="custom-list">
               <li>
-                <a href="/Réalisation/#home-space">Home space</a>
+                <Link to="/Réalisation/#home-space">Home space</Link>
               </li>
               <li>
-                <a href="/Réalisation/#home-space">Commentaire dynamique</a>
+                <Link to="/Réalisation/#home-space">Commentaire dynamique</Link>
               </li>
               <li>
-                <a href="/Réalisation/#home-space">porfolio</a>
+                <Link to="/Réalisation/#home-space">porfolio</Link>
               </li>
             </ul>
           </div>
@@ -194,13 +190,15 @@ function App() {
             </p>
             <ul className="custom-list">
               <li>
-                <a href="/Blog/#blog-article">Coder son site en HTML/CSS</a>
+                <Link to="/Blog/#blog-article">Coder son site en HTML/CSS</Link>
               </li>
               <li>
-                <a href="/blog-article">Vendre ses produits sur le web</a>
+                <Link to="/blog/#blog-article">
+                  Vendre ses produits sur le web
+                </Link>
               </li>
               <li>
-                <a href="/blog-article">Se positionner sur Google</a>
+                <Link to="/blog/#blog-article">Se positionner sur Google</Link>
               </li>
             </ul>
           </div>

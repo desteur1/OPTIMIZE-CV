@@ -1,0 +1,64 @@
+/* MapComponent.css */
+
+/* Increase the width of the info window */
+.gm-style-iw.gm-style-iw-c {
+  /* width: 300px !important; */
+  max-width: 300px !important;
+  max-height: 350px;
+  padding: 10px;
+  font-family: Nunito Sans, sans-serif;
+  font-size: 14px;
+}
+
+/* Remove the default close button */
+.gm-style-iw button.gm-ui-hover-effect {
+  display: none !important;
+}
+
+/* Style the content inside the info window */
+.gm-style-iw .custom-info-window-content {
+  position: relative;
+  max-width: 300px;
+  line-height: 1.5;
+}
+
+.gm-style-iw .custom-info-window-content h4 {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+  text-align: start;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.gm-style-iw .custom-info-window-content p {
+  margin: 5px 0;
+  color: #555;
+  text-align: start;
+}
+
+.gm-style-iw .custom-info-window-content a {
+  color: blue;
+  text-decoration: underline;
+}
+
+.gm-style-iw .custom-info-window-content a img {
+  width: 24px;
+  height: 24px;
+}
+
+.gm-style-iw .custom-info-window-content .enlarge-link {
+  margin-top: 10px;
+  display: block;
+  text-align: start;
+  text-decoration: none;
+}
+.gm-style-iw-chr {
+  display: flex;
+}
+.gm-style-iw-ch {
+  display: none;
+}
+.direction-name {
+  padding-right: 50px;
+}
