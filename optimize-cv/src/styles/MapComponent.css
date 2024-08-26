@@ -1,64 +1,119 @@
-/* MapComponent.css */
+/*@media (min-width: 576px) and (max-width: 750px) {
+  div #map {
+    height: 345px !important;
+  }
+  .gm-style-iw-d {
+    width: 100%;
+  }
+}
 
-/* Increase the width of the info window */
-.gm-style-iw.gm-style-iw-c {
-  /* width: 300px !important; */
-  max-width: 300px !important;
-  max-height: 350px;
+@media (min-width: 765px) and (max-width: 900px) {
+  div #map {
+    height: 360px !important;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 992px) {
+  div #map {
+    height: 380px !important;
+  }
+} */
+
+.custom-info-window {
+  padding: 0 !important;
+  /* position: absolute;
+  top: 0;
+  left: 0;
+  background: white;
+  border: 1px solid black;
+  z-index: 1000; */
+}
+.empty-div {
+  width: 100px;
+  /* position: relative; */
+}
+.map-container {
+  display: flex;
   padding: 10px;
-  font-family: Nunito Sans, sans-serif;
-  font-size: 14px;
 }
-
-/* Remove the default close button */
-.gm-style-iw button.gm-ui-hover-effect {
-  display: none !important;
+.map-container a {
+  text-decoration: none;
+  font-weight: bold;
+  text-shadow: 1px 0 1px;
 }
-
-/* Style the content inside the info window */
-.gm-style-iw .custom-info-window-content {
-  position: relative;
-  max-width: 300px;
-  line-height: 1.5;
-}
-
-.gm-style-iw .custom-info-window-content h4 {
-  margin: 0;
-  font-size: 16px;
-  color: #333;
-  text-align: start;
+.trucate-text {
+  width: 100%;
+  white-space: nowrap; /*prenvent the txt from wrapping*/
+  overflow: hidden; /*hide text that exceed the container*/
+  text-overflow: ellipsis; /*add the ellipsis(...) to indicate the truncated text*/
+  display: inline-block; /*ensure on the same line*/
   font-size: 1.2em;
   font-weight: bold;
+  margin-bottom: 0;
 }
 
-.gm-style-iw .custom-info-window-content p {
-  margin: 5px 0;
-  color: #555;
-  text-align: start;
-}
-
-.gm-style-iw .custom-info-window-content a {
-  color: blue;
-  text-decoration: underline;
-}
-
-.gm-style-iw .custom-info-window-content a img {
-  width: 24px;
-  height: 24px;
-}
-
-.gm-style-iw .custom-info-window-content .enlarge-link {
-  margin-top: 10px;
-  display: block;
-  text-align: start;
-  text-decoration: none;
-}
-.gm-style-iw-chr {
+.direction-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
   display: flex;
-}
-.gm-style-iw-ch {
-  display: none;
+  flex-direction: column;
 }
 .direction-name {
-  padding-right: 50px;
+  width: 24px;
+  height: 24px;
+  margin: auto;
+}
+.custom-info-window {
+  text-align: start;
+  position: relative;
+}
+.infor-p {
+  margin-bottom: 5px;
+}
+/* targetting the terms & conditions text on the mini map*/
+.gm-style .gm-style-cc {
+  /* display: none; */
+  visibility: hidden;
+}
+/* targetting the google text on the mini map*/
+/* a[title="Open this area in Google Maps (opens a new window)"] {
+  display: block !important;
+  width: 0 !important;
+  height: 0 !important;
+} */
+.custom-info-window {
+  position: absolute;
+  top: 30px;
+  left: 10px;
+  background-color: white;
+  border: 1px solid black;
+  padding: 10px;
+  z-index: 1000;
+}
+
+@media (max-width: 992px) {
+  .direction-icon {
+    display: none;
+  }
+  .empty-div {
+    display: none;
+  }
+  .infor-p {
+    display: none;
+  }
+  .trucate-text {
+    width: 60%;
+  }
+  .enlarge-link {
+    padding-right: 20px;
+  }
+  .custom-infor-window {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+  #map {
+    height: 370px !important;
+  }
 }

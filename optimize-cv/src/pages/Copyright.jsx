@@ -2,31 +2,15 @@ import "../styles/Copyright.css";
 
 import { useEffect, useState } from "react";
 
-// const Copy = () => {
-// const scrollToTop = useCallback(() => {
-//   window.scrollTo({ top: 0, behavior: "smooth", scrollToTop });
-// }, []);  storing scrolltotop(function) in usecallback to prevent re-rendering
-// useEffect(() => {
-//   let buttonCopy = document.querySelector(".btn-b");
-//   let element = document.querySelector(".copyright");
-//   if (element) {
-//     element.innerHTML = "&#169; Designed by Desteur Fall";
-//     element.style.cursor = "pointer";
-//     element.addEventListener("click", scrollToTop);
-//   }
-//   buttonCopy.innerHTML = element;
-//   return () => {
-//     if (element) {
-//       element.removeEventListener("click", scrollToTop);
-//     }
-//   };
-// }, [scrollToTop]);  Include scrollToTop in the dependency array
-
 const Copy = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   const checkScrollPosition = () => {
-    if (window.scrollY + window.innerHeight >= document.body.offsetHeight) {
+    const offset = 10; // add a small offset to ensure the calculation is consistent and . The offset ensures that even if the scroll position is very close to the bottom, the button will still appear
+    if (
+      window.scrollY + window.innerHeight >=
+      document.body.offsetHeight - offset
+    ) {
       setIsVisible(true);
     } else {
       setIsVisible(false);

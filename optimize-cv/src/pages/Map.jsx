@@ -119,28 +119,68 @@
 
 // export default MapComponent;
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../styles/MapComponent.css"; // Import the custom CSS file
+import Direction from "../styles/images/direction.png";
 
 const MapComponent = () => {
   const mapRef = useRef(null);
+  const smallMapRef = useRef(null); // Reference for the small map
+  const [containerStyle, setContainerStyle] = useState();
+  // width: "100%",
+  // height: "500px",
 
   const initMap = () => {
-    if (window.google) {
+    if (window.google && mapRef.current) {
       const mapOptions = {
-        center: { lat: 48.49609753750962, lng: 7.465148141679359 },
-        zoom: 12,
+        center: { lat: 48.99002, lng: 1.79965 },
+        zoom: 16,
+        mapTypeControl: false,
+        streetViewControl: false,
+        fullscreenControl: false,
       };
 
       const map = new google.maps.Map(mapRef.current, mapOptions);
 
-      const markerPosition = { lat: 48.49609753750962, lng: 7.465148141679359 };
-      const destinationAddress = "40 rue des Guyonnes, 78440 France";
+      // Initialize the small map
+      const smallMapOptions = {
+        center: { lat: 48.99002, lng: 1.79965 },
+        zoom: 18, // More zoomed out
+        mapTypeId: google.maps.MapTypeId.SATELLITE, // Set to satellite view
+        mapTypeControl: false,
+        streetViewControl: false,
+        fullscreenControl: false,
+        disableDefaultUI: true, // Disable controls for the small map
+      };
+      const smallMap = new google.maps.Map(
+        smallMapRef.current,
+        smallMapOptions
+      );
+
+      const markerPosition = { lat: 48.99002, lng: 1.79965 };
+      const destinationAddress = "09 rue des Guyonnes, 78440 France";
 
       const marker = new google.maps.Marker({
         position: markerPosition,
         map: map,
-        title: "Rosheim, Alsace",
+        title: "Issou, Paris",
+        label: {
+          text: "09 Des Guyonnes, 78440 France",
+          color: "red",
+          fontWeight: "bold",
+          fontSize: "1em",
+        },
+      });
+      // Update the small map when the marker is moved
+      // const updateSmallMap = () => {
+      //   smallMap.setCenter(marker.getPosition());
+      // };
+
+      // Add an event listener to the marker to update the small map
+      //
+      // Update the small map center when the main map changes
+      map.addListener("center_changed", () => {
+        smallMap.setCenter(map.getCenter());
       });
 
       const directionsUrl = `https://www.google.com/maps/dir/?api=1&origin=${
@@ -149,60 +189,100 @@ const MapComponent = () => {
         destinationAddress
       )}`;
 
-      const infoWindowContent = `
-        <div class="custom-info-window-content">
-          <h4>Rosheim, Alsace</h4>
-          <p>9 Rue Des Guyonnes, 78440 Issou,</br> France.</p>
-          <a href="${directionsUrl}" target="_blank" style="position: absolute; top: 0; right: 0;">
-            <img src="https://www.gstatic.com/mapspro/icons/2/places_directions.svg" alt="Directions" className="direction-name">
-          </a>
-          <a href="#" id="enlargeMap" class="enlarge-link">Enlarge Map</a>
-        </div>
-      `;
+      const infoWindowDiv = document.createElement("div");
+      infoWindowDiv.className = "custom-info-window";
+      infoWindowDiv.innerHTML = `
+        <div class="map-container">
+        <div class="custom-infor-window">
+        <h4 class="trucate-text">9 Rue Des Guyonnes</h4>
+        <p class="infor-p">9 Rue Des Guyonnes, 78440 Issou,</br> France.</p>
+        <a href="${directionsUrl}" class="direction-icon" target="_blank">
+          <img src="${Direction}" alt="Directions" class="direction-name">
+          <span class="direction-title">Itinéraires</span>
+        </a>
+        <a href="#" id="enlargeMap" class="enlarge-link">Aggrandir le plan</a>
+      </div>
+      <div class="empty-div"></div>
+      </div>`;
 
-      const infoWindow = new google.maps.InfoWindow({
-        content: infoWindowContent,
-      });
+      mapRef.current.appendChild(infoWindowDiv);
+
+      const positionCustomInfoWindow = () => {
+        // infoWindowDiv.style.position = "absolute";
+        // infoWindowDiv.style.top = "0px";
+        // infoWindowDiv.style.left = "0px";
+        // infoWindowDiv.style.backgroundColor = "white";
+        // infoWindowDiv.style.border = "1px solid black";
+        // infoWindowDiv.style.padding = "10px";
+        // infoWindowDiv.style.zIndex = "1000"; // Ensure it is above other elements
+        infoWindowDiv.classList.add("custom-info-window");
+      };
+
+      google.maps.event.addListenerOnce(map, "idle", positionCustomInfoWindow);
+      google.maps.event.addListener(map, "resize", positionCustomInfoWindow);
 
       marker.addListener("click", () => {
-        infoWindow.open(map, marker);
-
-        google.maps.event.addListenerOnce(infoWindow, "domready", () => {
-          const closeButton = document.querySelector(
-            ".gm-style-iw button.gm-ui-hover-effect"
-          );
-
-          if (closeButton) {
-            closeButton.style.display = "none";
-          }
-        });
+        infoWindowDiv.style.display =
+          infoWindowDiv.style.display === "block" ? "none" : "block";
 
         google.maps.event.addListenerOnce(map, "click", () => {
-          infoWindow.close();
+          infoWindowDiv.style.display = "none";
         });
 
         const enlargeLink = document.getElementById("enlargeMap");
         if (enlargeLink) {
           enlargeLink.addEventListener("click", (event) => {
             event.preventDefault();
-            map.setZoom(15);
+            map.setZoom(18);
             map.setCenter(markerPosition);
           });
         }
       });
+
+      infoWindowDiv.style.display = "none";
     } else {
-      console.error("Google Maps API is not loaded.");
+      console.error("Google Maps API is not loaded or mapRef is not defined.");
     }
   };
 
   useEffect(() => {
+    //Function to update map container height
+    const updateContainerHeight = () => {
+      if (window.innerWidth <= 600) {
+        setContainerStyle({
+          width: "100%",
+          height: "250px",
+        });
+      } else {
+        setContainerStyle({
+          width: "100%",
+          height: "405px",
+        });
+      }
+    };
+
+    // Initial call to set the correct height
+    updateContainerHeight();
+
+    //Add resize event listener
+    window.addEventListener("resize", updateContainerHeight);
+
+    // Cleanup event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", updateContainerHeight);
+    };
+  }, []);
+
+  useEffect(() => {
+    const mapElement = mapRef.current; // Capture the current map element
+
     const existingScript = document.querySelector(
-      `script[src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUkBJNdaV4pE2NV1jxOA0VTGJq3lTjAmU"]`
+      `script[src="https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}"]`
     );
 
     if (!existingScript) {
       const script = document.createElement("script");
-      script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyAUkBJNdaV4pE2NV1jxOA0VTGJq3lTjAmU`;
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}`;
       script.async = true;
       script.defer = true;
       script.onload = () => {
@@ -222,15 +302,28 @@ const MapComponent = () => {
     }
 
     return () => {
-      const mapElement = document.getElementById("map");
       if (mapElement) {
-        mapElement.innerHTML = "";
+        mapElement.innerHTML = ""; // Use the captured reference
       }
     };
   }, []);
 
   return (
-    <div id="map" ref={mapRef} style={{ height: "500px", width: "100%" }}></div>
+    <div style={{ position: "relative" }}>
+      <div id="map" ref={mapRef} style={containerStyle}></div>
+      <div
+        id="smallMap"
+        ref={smallMapRef}
+        style={{
+          position: "absolute",
+          bottom: "20px",
+          left: "20px",
+          width: "50px",
+          height: "50px",
+          border: "4px solid white",
+        }}
+      ></div>
+    </div>
   );
 };
 
