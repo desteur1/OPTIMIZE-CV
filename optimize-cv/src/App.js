@@ -108,14 +108,14 @@ function App() {
                 Téléphone: <a href="tel:+33751914122">0751914122</a>
               </p>
               <div className="media-container">
-                <a href="Profile" target="_blank" rel="nofollow noreferrer">
+                <Link to="Profile" target="_blank" rel="nofollow noreferrer">
                   {" "}
                   <img
                     className="social-media"
                     src={github}
                     alt="Github logo"
                   />
-                </a>
+                </Link>
                 <a
                   href="https://www.linkedin.com/in/piepenche-fall-desteur-3715032ab/"
                   target="_blank"
