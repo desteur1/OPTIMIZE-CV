@@ -105,7 +105,7 @@ function App() {
                 78440 issou, France
               </p>
               <p>
-                Téléphone: <a href="tel:+33751914122">0751914122</a>
+                Téléphone: <a href="tel:+33659033829">0659033829</a>
               </p>
               <div className="media-container">
                 <Link to="Profile" target="_blank" rel="nofollow noreferrer">
@@ -173,13 +173,22 @@ function App() {
             </p>
             <ul className="custom-list">
               <li>
-                <Link to="/Réalisation/#home-space">Home space</Link>
+                <Link to="/Réalisation/#home-space">porfolio</Link>
               </li>
               <li>
                 <Link to="/Réalisation/#home-space">Commentaire dynamique</Link>
               </li>
               <li>
-                <Link to="/Réalisation/#home-space">porfolio</Link>
+                <Link to="/Réalisation/#home-space">Home space</Link>
+              </li>
+              <li>
+                <Link to="/Réalisation/#home-space">Mon Artisan</Link>
+              </li>
+              <li>
+                <Link to="/Réalisation/#home-space">Petit Village</Link>
+              </li>
+              <li>
+                <Link to="/Réalisation/#home-space">Space X</Link>
               </li>
             </ul>
           </div>

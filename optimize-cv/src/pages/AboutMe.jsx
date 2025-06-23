@@ -72,6 +72,22 @@ const About = () => {
                 ></div>
               </div>
             </dd>
+            <dt>JAVASCRIPT 65%</dt>
+            <dd>
+              <div
+                className="progress"
+                role="progressbar"
+                aria-label="Info example"
+                aria-valuenow="50"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <div
+                  className="progress-bar bg-primary"
+                  style={{ width: "65%" }}
+                ></div>
+              </div>
+            </dd>
             <dt>REACT.JS 50%</dt>
             <dd>
               <div
@@ -104,6 +120,22 @@ const About = () => {
                 ></div>
               </div>
             </dd>
+            <dt>ANGULAR 70%</dt>
+            <dd>
+              <div
+                className="progress"
+                role="progressbar"
+                aria-label="Danger example"
+                aria-valuenow="100"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <div
+                  className="progress-bar bg-success"
+                  style={{ width: "70%" }}
+                ></div>
+              </div>
+            </dd>
             <dt>NEXT.JS 50%</dt>
             <dd>
               <div
@@ -115,8 +147,72 @@ const About = () => {
                 aria-valuemax="100"
               >
                 <div
-                  className="progress-bar bg-primary"
+                  className="progress-bar bg-warning"
                   style={{ width: "50%" }}
+                ></div>
+              </div>
+            </dd>
+            <dt>BOOTSTRAP 80%</dt>
+            <dd>
+              <div
+                className="progress"
+                role="progressbar"
+                aria-label="Danger example"
+                aria-valuenow="100"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <div
+                  className="progress-bar bg-primary"
+                  style={{ width: "800%" }}
+                ></div>
+              </div>
+            </dd>
+            <dt>TAILWIND CSS 65%</dt>
+            <dd>
+              <div
+                className="progress"
+                role="progressbar"
+                aria-label="Danger example"
+                aria-valuenow="100"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <div
+                  className="progress-bar bg-info"
+                  style={{ width: "65%" }}
+                ></div>
+              </div>
+            </dd>
+            <dt>MY SQL 55%</dt>
+            <dd>
+              <div
+                className="progress"
+                role="progressbar"
+                aria-label="Danger example"
+                aria-valuenow="100"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <div
+                  className="progress-bar bg-primary"
+                  style={{ width: "55%" }}
+                ></div>
+              </div>
+            </dd>
+            <dt>POSTGRE SQL 60%</dt>
+            <dd>
+              <div
+                className="progress"
+                role="progressbar"
+                aria-label="Danger example"
+                aria-valuenow="100"
+                aria-valuemin="0"
+                aria-valuemax="100"
+              >
+                <div
+                  className="progress-bar bg-danger"
+                  style={{ width: "60%" }}
                 ></div>
               </div>
             </dd>
