@@ -8,7 +8,7 @@ import figurine from "../styles/images/figurine-fare.jpg";
 import spacex from "../styles/images/spacex.jpeg";
 import Api from "../styles/images/api.jpeg";
 
-const Réalisation = () => {
+const Realisation = () => {
   return (
     <div className="réalisation-container">
       <img src={Servicebg} alt="service background" className="img-fluid" />
@@ -235,4 +235,4 @@ const Réalisation = () => {
   );
 };
 
-export default Réalisation;
+export default Realisation;
