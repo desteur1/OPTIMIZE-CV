@@ -6,6 +6,7 @@ import Servicebg from "../styles/images/banner.jpg";
 import artisan from "../styles/images/artisan.jpg";
 import figurine from "../styles/images/figurine-fare.jpg";
 import spacex from "../styles/images/spacex.jpeg";
+import Api from "../styles/images/api.jpeg";
 
 const Réalisation = () => {
   return (
@@ -193,6 +194,38 @@ const Réalisation = () => {
               </div>
               <div className="card-footer">
                 <small className="text-muted"> Site réalisé avec Vue.js</small>
+              </div>
+            </div>
+          </div>
+          {/* First Card  */}
+          <div className="col-lg-4 col-md-6 ">
+            <div className="card border réalisation-container__card rounded-top mb-4">
+              <img
+                src={Api}
+                className="card-img-top img-fluid rounded-top img-p"
+                alt="Mon API"
+              />
+              <div className="card-body réalisation-body">
+                <h5 className="card-title réalisation-title">
+                  Creation d'une API
+                </h5>
+                <p className="card-text réalisation-text">
+                  Réalisation d'un site personnel <br />
+                  <span className="center-span">"API"</span>
+                </p>
+                <div className="button-container">
+                  <a
+                    href="https://port-russell-api-42po.onrender.com/"
+                    className="btn btn-outline-primary btn-sm"
+                  >
+                    voir
+                  </a>
+                </div>
+              </div>
+              <div className="card-footer">
+                <small className="text-muted">
+                  Site réalisé avec avec Express et mongoDB
+                </small>
               </div>
             </div>
           </div>

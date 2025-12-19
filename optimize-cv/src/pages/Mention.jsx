@@ -51,7 +51,7 @@ const Mention = () => {
                   <FontAwesomeIcon icon={faMobileScreenButton} />{" "}
                   <span>
                     <a className="color-blue" href="tel:+33659033829">
-                      659033829
+                      0659033829
                     </a>
                   </span>
                 </div>
