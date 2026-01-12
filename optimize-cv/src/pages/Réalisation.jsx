@@ -33,7 +33,7 @@ const Realisation = () => {
                 </p>
                 <div className="button-container">
                   <a
-                    href="https://desteur1.github.io/rethinked-porfolio/#contact"
+                    href="https://desteur1.github.io/rethinked-porfolio/"
                     className="btn btn-outline-primary btn-sm"
                   >
                     voir
@@ -210,9 +210,11 @@ const Realisation = () => {
                   Creation d'une API
                 </h5>
                 <p className="card-text réalisation-text">
-                  Réalisation d'un site personnel <br />
-                  <span className="center-span">"API"</span>
+                  Développement d’une API pour un site personnel <br />
+                  <strong>Hébergée sur Render</strong> <br /> un léger temps de
+                  chargement peut être observé lors du premier accès
                 </p>
+
                 <div className="button-container">
                   <a
                     href="https://port-russell-api-42po.onrender.com/"

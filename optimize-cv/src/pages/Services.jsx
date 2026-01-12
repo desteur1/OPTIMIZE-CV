@@ -10,14 +10,18 @@ const Services = () => {
       <img src={Servicebg} alt="service background" className="img-fluid" />
       <h1>Mon offre de Services</h1>
       <p className="first-pp">
-        voici les présentations sur lesquelles je peux intervenir
+        voici les services sur lesquels je peux intervenir
       </p>
       <div className="service-container__line2"></div>
       <div className="card-group service-container__group">
         {/* first column */}
         <div className="card  border border-3 rounded shadow m-3 service-container__card">
           <div className="icon-wrapper">
-            <img src={UX} className="card-img-top img-S" alt="UX Design" />
+            <img
+              src={UX}
+              className="card-img-top img-S"
+              alt="Illustration UX Design"
+            />
           </div>
           <div className="card-body">
             <h5 className="card-title">UX DESIGN</h5>
@@ -34,27 +38,32 @@ const Services = () => {
             <img
               src={WebBg}
               className="card-img-top img-S"
-              alt="Web development"
+              alt="Illustration développement web"
             />
           </div>
           <div className="card-body">
             <h5 className="card-title">DÉVELOPPEMENT WEB</h5>
             <p className="card-text">
-              le <strong>dévelopement de sites web</strong> repose sur
-              l'utilisation des langages HTML,CSS,JavaScript.
+              le <strong>développement de sites web</strong> repose sur
+              l'utilisation des langages HTML,CSS,JavaScript
+              (framworks),python,php et bien d'autres.
             </p>
           </div>
         </div>
         {/* Third comumn */}
         <div className="card border border-3 rounded shadow m-3 service-container__card ">
           <div className="icon-wrapper">
-            <img src={Seo} className="card-img-top  img-S" alt="Seo" />
+            <img
+              src={Seo}
+              className="card-img-top  img-S"
+              alt="Illustration référencement naturel SEO"
+            />
           </div>
           <div className="card-body">
             <h5 className="card-title">RÉFÉRENCEMENT</h5>
             <p className="card-text">
               le <strong>référencement naturel d'un site,</strong> aussi appelé
-              SEO, consiste à mettre des techniques en oeuvre pour améliorer sa
+              SEO, consiste à mettre en oeuvre des techniques pour améliorer sa
               position dans les résultats des moteurs de recherche.
             </p>
           </div>
