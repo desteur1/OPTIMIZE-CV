@@ -1,9 +1,10 @@
 // ContactForm.js
 import React, { useState, useEffect } from "react";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 import "../styles/Contact.css";
 
 const ContactForm = () => {
+  // stock les valeurs des champs du formulaire(chaque input est relié à une propriété de formData)
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -15,40 +16,55 @@ const ContactForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const [isServiceAvailable, setisServiceAvailable] = useState(null);
 
-  const serviceID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
-  const templateID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
-  const userID = process.env.REACT_APP_EMAILJS_USER_ID;
-
+  //efface les messages de succès ou d'erreur après 4 secondes
   useEffect(() => {
-    const checkEmailJsAvailable = async () => {
-      try {
-        await emailjs.send(serviceID, templateID, {}, userID); //The code is checking if the EmailJS service is available by attempting to send a "test" email with no content.
-        //templateParams(the empty braket) Is Required: Even if you don’t have dynamic data to pass, you must include an empty object ({}) as the templateParams to fulfill the function’s requirements.
-        setisServiceAvailable(true);
-      } catch (error) {
-        setisServiceAvailable(false);
-        setErrorMessage("Service indisponible.Veillez réessayer plus tard.");
-      }
-    };
-    checkEmailJsAvailable();
-  }, [serviceID, templateID, userID]); //you’re telling React Re-run this useEffect every time one of these variables (serviceID, templateID, userID) changes.
+    if (!successMessage && !errorMessage) return;
 
+    const timer = setTimeout(() => {
+      setSuccessMessage("");
+      setErrorMessage("");
+    }, 4000);
+
+    return () => clearTimeout(timer);
+  }, [successMessage, errorMessage]);
+
+  //met à jour formData lorsque l'utilisateur saisit des données dans les champs du formulaire(chaque frappe clavier , recupère l'id {email,name etc} et la valeur de l'input modifié)
   const handleChange = (e) => {
     const { id, value } = e.target;
     setFormData({ ...formData, [id]: value });
   };
 
+  //empêche le comportement par défaut du formulaire(l'actualisation de la page) et active l'état "envoi en cours..."
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    console.log({
+      service: process.env.REACT_APP_EMAILJS_SERVICE_ID,
+      template: process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+      user: process.env.REACT_APP_EMAILJS_USER_ID,
+    });
+
+    //utilise emailjs pour envoyer les données du formulaire
     emailjs
-      .send(serviceID, templateID, formData, userID)
+      .send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        {
+          to_name: "Desteur",
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        process.env.REACT_APP_EMAILJS_USER_ID
+      )
+      //si l'envoi est réussi, réinitialise le formulaire et affiche un message de succès
       .then(() => {
-        setIsSubmitting(false);
-        setSuccessMessage("Formulaire soumis avec succès !");
+        // setIsSubmitting(false);
+        setSuccessMessage("Message envoyé avec succès !");
         setErrorMessage("");
         setFormData({
           name: "",
@@ -58,15 +74,17 @@ const ContactForm = () => {
           message: "",
         });
       })
-      .catch(() => {
-        setIsSubmitting(false);
+      //si l'envoi échoue, affiche un message d'erreur
+      .catch((err) => {
+        console.error("EmailJS error:", err);
         setErrorMessage("Echec de l'envoi du formulaire. Veuillez réessayer.");
         setSuccessMessage("");
+      })
+      //quel que soit le résultat, désactive l'état "envoi en cours..."
+      .finally(() => {
+        setIsSubmitting(false);
       });
   };
-  if (isServiceAvailable === null) {
-    return <p>Vérification de la disponibilité du service...</p>;
-  }
 
   return (
     <form className="form" name="form" onSubmit={handleSubmit}>
@@ -81,7 +99,6 @@ const ContactForm = () => {
         required
         value={formData.name}
         onChange={handleChange}
-        disabled={!isServiceAvailable}
       />
 
       <label htmlFor="email"></label>
@@ -93,7 +110,6 @@ const ContactForm = () => {
         required
         value={formData.email}
         onChange={handleChange}
-        disabled={!isServiceAvailable}
       />
 
       <label htmlFor="phone"></label>
@@ -105,7 +121,6 @@ const ContactForm = () => {
         required
         value={formData.phone}
         onChange={handleChange}
-        disabled={!isServiceAvailable}
       />
 
       <label htmlFor="subject"></label>
@@ -117,7 +132,6 @@ const ContactForm = () => {
         required
         value={formData.subject}
         onChange={handleChange}
-        disabled={!isServiceAvailable}
       />
 
       <label htmlFor="message"></label>
@@ -130,7 +144,6 @@ const ContactForm = () => {
         required
         value={formData.message}
         onChange={handleChange}
-        disabled={!isServiceAvailable}
       ></textarea>
       <button type="submit" className="btn btn-primary" disabled={isSubmitting}>
         {isSubmitting ? "Envoi en cours..." : "Envoyer"}

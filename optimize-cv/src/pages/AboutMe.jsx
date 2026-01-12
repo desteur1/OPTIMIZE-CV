@@ -8,7 +8,7 @@ const About = () => {
       id="about"
     >
       <div className="wrapper-first-item">
-        <h3>À propos</h3>
+        <h2 className="my-h2">À propos</h2>
         <div className="line-1"></div>
         <article className="first-p">
           <p>
@@ -59,7 +59,8 @@ const About = () => {
           <img className="img-fluid custom-img" src={Profile} alt="profile" />
         </div>
         <h2>Mes Competences</h2>
-        <article className="second">
+        <div className="line-1"></div>
+        {/* <article className="second">
           <dl>
             <dt>HTML 90%</dt>
             <dd>
@@ -336,7 +337,45 @@ const About = () => {
               </div>
             </dd>
           </dl>
-        </article>
+        </article> */}
+        <h3>Développement Frontend</h3>
+        <ul className="skills-list">
+          <li className="skill-badge">HTML5</li>
+          <li className="skill-badge">CSS3</li>
+          <li className="skill-badge">JavaScript (ES6+)</li>
+          <li className="skill-badge">Next.js</li>
+          <li className="skill-badge">Typescript</li>
+          <li className="skill-badge">React</li>
+          <li className="skill-badge">Vue</li>
+          <li className="skill-badge">Angular</li>
+
+          <li className="skill-badge">Bootstrap</li>
+          <li className="skill-badge">Tailwind CSS</li>
+          <li className="skill-badge">Figma</li>
+        </ul>
+
+        <h3>Développement Backend</h3>
+        <ul className="skills-list">
+          <li className="skill-badge">Node.js</li>
+          <li className="skill-badge">Express</li>
+          <li className="skill-badge">Python</li>
+          <li className="skill-badge">Django</li>
+          <li className="skill-badge">MySQL</li>
+          <li className="skill-badge">PostgreSQL</li>
+          <li className="skill-badge">MongoDB</li>
+        </ul>
+
+        <h3>DevOps & Outils</h3>
+        <ul className="skills-list">
+          <li className="skill-badge">Docker</li>
+          <li className="skill-badge">Git / GitHub</li>
+          <li className="skill-badge">n8n</li>
+        </ul>
+
+        <h3>CMS</h3>
+        <ul className="skills-list">
+          <li className="skill-badge">WordPress</li>
+        </ul>
       </div>
     </div>
   );
