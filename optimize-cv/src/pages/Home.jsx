@@ -22,7 +22,9 @@ const Home = () => {
           alt="presentation background"
         />
         <div className="text-container w-100">
-          <h1 className="display-4">Bonjour, Je suis Piepenche Fall Desteur</h1>
+          <h1 className="display-4" id="home">
+            Bonjour, Je suis Piepenche Fall Desteur
+          </h1>
           <h2>Développeur Fullstack</h2>
           <button
             type="button"
