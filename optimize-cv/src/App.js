@@ -1,6 +1,7 @@
 import React from "react";
 import "./styles/Nav.css";
 import { Route, Routes, NavLink, Link } from "react-router-dom";
+import ScrollToHash from "./components/ScrollToHash";
 
 import Home from "./pages/Home";
 import Réalisation from "./pages/Réalisation";
@@ -21,7 +22,7 @@ function App() {
     <div className="App">
       <div className="container-fluid p-0" id="home-img">
         <nav className="navbar navbar-expand-lg  navbar-dark bg-dark ">
-          <NavLink className="navbar-brand col-md-3 text-center " href="/">
+          <NavLink to="/" className="navbar-brand col-md-3 text-center ">
             Desteur Fall
           </NavLink>
           <button
@@ -81,6 +82,8 @@ function App() {
           </div>
         </nav>
       </div>
+      {/* permets le scroll vers les ancres */}
+      <ScrollToHash />
 
       <Routes>
         <Route path="/" element={<Home />}></Route>
@@ -150,7 +153,7 @@ function App() {
             </p>
             <ul className="custom-list">
               <li>
-                <Link to="/#navbarNavAltMarkup">Accueil</Link>
+                <Link to="/#home">Accueil</Link>
               </li>
               <li>
                 <Link to="/#about">À propos</Link>
@@ -205,12 +208,12 @@ function App() {
                 <Link to="/Blog/#blog-article">Coder son site en HTML/CSS</Link>
               </li>
               <li>
-                <Link to="/blog/#blog-article">
+                <Link to="/Blog/#blog-article">
                   Vendre ses produits sur le web
                 </Link>
               </li>
               <li>
-                <Link to="/blog/#blog-article">Se positionner sur Google</Link>
+                <Link to="/Blog/#blog-article">Se positionner sur Google</Link>
               </li>
             </ul>
           </div>
