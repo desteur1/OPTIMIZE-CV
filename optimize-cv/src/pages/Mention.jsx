@@ -8,7 +8,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 const Mention = () => {
   return (
-    <div className="mention-container">
+    <div className="mention-container" id="mention-page">
       <h1 className="mention-title">MENTION LÉGALES</h1>
       <div className="service-container__line2 mention-line"></div>
       <div className="container">

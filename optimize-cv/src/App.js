@@ -159,13 +159,13 @@ function App() {
                 <Link to="/#about">À propos</Link>
               </li>
               <li>
-                <Link to="/Services">Services</Link>
+                <Link to="/Services/#service-page">Services</Link>
               </li>
               <li>
-                <Link to="/Contact">Me contacter</Link>
+                <Link to="/Contact/#contact-page">Me contacter</Link>
               </li>
               <li>
-                <Link to="/Mention">Mentions légales</Link>
+                <Link to="/Mention/#mention-page">Mentions légales</Link>
               </li>
             </ul>
           </div>

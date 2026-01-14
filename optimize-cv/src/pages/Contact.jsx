@@ -10,7 +10,7 @@ import {
 
 const Contact = () => {
   return (
-    <div className="modal-background">
+    <div className="modal-background" id="contact-page">
       {/* <img className="img-fluid" src={ContactBg} alt="" /> */}
       <div className="contact-content">
         <h1 className="contact-title">
