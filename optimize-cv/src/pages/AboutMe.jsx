@@ -363,6 +363,8 @@ const About = () => {
           <li className="skill-badge">MySQL</li>
           <li className="skill-badge">PostgreSQL</li>
           <li className="skill-badge">MongoDB</li>
+          <li className="skill-badge">PHP</li>
+          <li className="skill-badge">Symfony</li>
         </ul>
 
         <h3>DevOps & Outils</h3>
@@ -375,6 +377,7 @@ const About = () => {
         <h3>CMS</h3>
         <ul className="skills-list">
           <li className="skill-badge">WordPress</li>
+          <li className="skill-badge">Prestashop</li>
         </ul>
       </div>
     </div>
