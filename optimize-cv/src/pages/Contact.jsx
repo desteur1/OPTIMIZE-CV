@@ -46,8 +46,8 @@ const Contact = () => {
               <div>
                 <FontAwesomeIcon icon={faMobileScreenButton} />{" "}
                 <span>
-                  <a className="color-blue" href="tel:+33751914122">
-                    6751914122
+                  <a className="color-blue" href="tel:+33659033829">
+                    659033829
                   </a>
                 </span>
               </div>

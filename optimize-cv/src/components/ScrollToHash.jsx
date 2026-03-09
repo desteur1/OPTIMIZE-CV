@@ -6,16 +6,17 @@ const ScrollToHash = () => {
 
   useEffect(() => {
     if (location.hash) {
-      const id = location.hash.replace("#", "");
+      // Si l'URL contient une ancre (hash)
+      const id = location.hash.replace("#", ""); // supprimer le # pour obtenir l'id de l'élément
 
       setTimeout(() => {
-        const element = document.getElementById(id);
-        element?.scrollIntoView({ behavior: "smooth" });
+        const element = document.getElementById(id); // trouver l'élément correspondant à l'id
+        element?.scrollIntoView({ behavior: "smooth" }); // faire défiler jusqu'à l'élément de manière fluide
       }, 150);
     } else {
-      window.scrollTo({ top: 0 });
+      window.scrollTo({ top: 0 }); // Si aucune ancre n'est présente, faire défiler vers le haut de la page
     }
-  }, [location]);
+  }, [location]); // Exécuter l'effet à chaque changement de location
 
   return null;
 };
