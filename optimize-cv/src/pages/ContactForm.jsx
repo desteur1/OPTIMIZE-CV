@@ -1,5 +1,5 @@
 // ContactForm.js
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import "../styles/Contact.css";
 
@@ -13,13 +13,13 @@ const ContactForm = () => {
     message: "",
   });
 
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [successMessage, setSuccessMessage] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false); // indique si le formulaire est en cours d'envoi
+  const [successMessage, setSuccessMessage] = useState(""); // stock le message de succès après l'envoi du formulaire
+  const [errorMessage, setErrorMessage] = useState(""); // stock le message d'erreur en cas d'échec de l'envoi du formulaire
 
   //efface les messages de succès ou d'erreur après 4 secondes
   useEffect(() => {
-    if (!successMessage && !errorMessage) return;
+    if (!successMessage && !errorMessage) return; // si aucun message n'est présent, ne pas créer de timer
 
     const timer = setTimeout(() => {
       setSuccessMessage("");
@@ -59,7 +59,7 @@ const ContactForm = () => {
           subject: formData.subject,
           message: formData.message,
         },
-        process.env.REACT_APP_EMAILJS_USER_ID
+        process.env.REACT_APP_EMAILJS_USER_ID,
       )
       //si l'envoi est réussi, réinitialise le formulaire et affiche un message de succès
       .then(() => {
